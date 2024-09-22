@@ -154,7 +154,7 @@ const DialogFooter: FC<DialogCommonPropsType> = ({ children, className }) => {
   return <div className={cn(footer, className ?? "")}>{children}</div>;
 };
 
-const DialogClose: FC<DialogCommonPropsType> = ({ children, className }) => {
+const DialogClose: FC<DialogCommonPropsType> = ({ children }) => {
   const { setIsOpen } = useDialog();
   return <div onClick={() => setIsOpen(false)}>{children}</div>;
 };
