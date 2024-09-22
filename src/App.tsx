@@ -1,4 +1,16 @@
+import { useState } from "react";
 import { Button } from "./components/button";
+import {
+  Dialog,
+  DialogBody,
+  DialogClose,
+  DialogContent,
+  DialogDescription,
+  DialogFooter,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "./components/dialog";
 import {
   Select,
   SelectItem,
@@ -7,14 +19,17 @@ import {
 } from "./components/select";
 
 function App() {
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+
   return (
     <>
       <div className="w-max mx-auto mt-10">
-        <h1 className="text-lg font-semibold">Button</h1>
+        <h1 className="text-lg font-semibold text-center">Button</h1>
         <div className="flex items-center gap-2">
           <Button>Primary</Button>
           <Button variant="secondary">Secondary</Button>
           <Button variant="ghost">Ghost</Button>
+          <Button variant="destructive">Destructive</Button>
           <Button variant="link">Link</Button>
           <Button variant="outline">Outline</Button>
           <Button size="small">Small</Button>
@@ -22,8 +37,8 @@ function App() {
         </div>
       </div>
 
-      <div className="w-max mx-auto mt-10 ">
-        <h1 className="text-lg font-semibold">Select Box</h1>
+      <div className="w-max mx-auto mt-10">
+        <h1 className="text-lg font-semibold text-center">Select Box</h1>
         <div className="flex gap-2">
           <Select>
             <SelectTrigger>Select an option</SelectTrigger>
@@ -45,6 +60,29 @@ function App() {
             </SelectList>
           </Select>
         </div>
+      </div>
+
+      <div className="w-max mx-auto mt-10">
+        <h1 className="text-lg font-semibold text-center">Dialog</h1>
+        <Dialog isOpen={isDialogOpen} setIsOpen={setIsDialogOpen}>
+          <DialogTrigger>Open Dialog</DialogTrigger>
+          <DialogContent>
+            <DialogHeader>
+              <DialogTitle>Dialog title</DialogTitle>
+              <DialogDescription>
+                This is dialog description...
+              </DialogDescription>
+            </DialogHeader>
+            <DialogBody>
+              <p>Dialog body...</p>
+            </DialogBody>
+            <DialogFooter>
+              <DialogClose>
+                <Button>Close</Button>
+              </DialogClose>
+            </DialogFooter>
+          </DialogContent>
+        </Dialog>
       </div>
     </>
   );
