@@ -17,6 +17,18 @@ import {
   SelectList,
   SelectTrigger,
 } from "./components/select";
+import {
+  AlertDialog,
+  AlertDialogBody,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogSubmit,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from "./components/alert-dialog";
 
 function App() {
   const [isDialogOpen, setIsDialogOpen] = useState(false);
@@ -83,6 +95,25 @@ function App() {
             </DialogFooter>
           </DialogContent>
         </Dialog>
+      </div>
+
+      <div className="w-max mx-auto mt-10">
+        <h1 className="text-lg font-semibold text-center">Alert Dialog</h1>
+        <AlertDialog>
+          <AlertDialogTrigger>Open Alert Dialog</AlertDialogTrigger>
+          <AlertDialogContent>
+            <AlertDialogHeader>
+              <AlertDialogTitle>Title</AlertDialogTitle>
+              <AlertDialogDescription>description</AlertDialogDescription>
+            </AlertDialogHeader>
+            <AlertDialogBody>Alert dialog body...</AlertDialogBody>
+
+            <AlertDialogFooter>
+              <AlertDialogCancel>Cancel</AlertDialogCancel>
+              <AlertDialogSubmit>Submit</AlertDialogSubmit>
+            </AlertDialogFooter>
+          </AlertDialogContent>
+        </AlertDialog>
       </div>
     </>
   );
