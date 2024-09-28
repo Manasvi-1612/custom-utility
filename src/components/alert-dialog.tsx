@@ -76,6 +76,7 @@ const AlertDialogTrigger: FC<AlertDialogTriggerPropsType> = ({
       disabled={disabled}
       className={className}
       onClick={() => setIsOpen(true)}
+      variant={variant}
     >
       {children}
     </Button>
